@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Private Chat — گفت‌وگوی خصوصی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="shell">
+    <section id="gate" class="gate card">
+      <div class="brand-mark"><span class="brand-icon">✦</span></div>
+      <p class="eyebrow">PRIVATE SPACE</p>
+      <h1>ورود به فضای خصوصی</h1>
+      <p class="muted">برای ورود به چت‌روم، رمز دسترسی سایت را وارد کن.</p>
+      <form id="gate-form" class="stack">
+        <label for="site-password">رمز ورود سایت</label>
+        <div class="input-wrap"><span>⌑</span><input id="site-password" type="password" placeholder="رمز دسترسی" autocomplete="current-password" required></div>
+        <button class="primary" type="submit">ورود به سایت <span>←</span></button>
+        <p id="gate-error" class="error"></p>
+      </form>
+    </section>
+
+    <section id="auth" class="auth-layout hidden">
+      <aside class="intro card">
+        <div class="brand"><span class="brand-icon">✦</span><span>PRIVATE<span class="brand-light">CHAT</span></span></div>
+        <div class="intro-copy">
+          <p class="eyebrow">A QUIETER CORNER OF THE INTERNET</p>
+          <h1>حرف‌هات رو<br><span>اینجا بزن.</span></h1>
+          <p class="muted">یک فضای جمع‌وجور برای گفت‌وگو با آدم‌هایی که می‌شناسی.</p>
+        </div>
+        <div class="intro-foot"><span class="pulse"></span> فقط ۱۰ حساب کاربری</div>
+      </aside>
+      <section class="auth-card card">
+        <div class="auth-tabs">
+          <button class="tab active" data-tab="login">ورود</button>
+          <button class="tab" data-tab="register">ساخت حساب</button>
+        </div>
+        <div id="login-panel">
+          <h2>خوش برگشتی 👋</h2><p class="muted">با حساب کاربریت وارد شو.</p>
+          <form id="login-form" class="stack">
+            <label for="login-user">نام کاربری</label><input id="login-user" type="text" placeholder="مثلاً ali_01" autocomplete="username" required>
+            <label for="login-pass">رمز عبور</label><input id="login-pass" type="password" placeholder="رمز عبورت" autocomplete="current-password" required>
+            <button class="primary" type="submit">ورود به چت <span>←</span></button>
+            <p id="login-error" class="error"></p>
+          </form>
+        </div>
+        <div id="register-panel" class="hidden">
+          <h2>حساب جدید بساز</h2><p class="muted">برای ورود به جمع، یک حساب بساز.</p>
+          <form id="register-form" class="stack">
+            <label for="register-user">نام کاربری</label><input id="register-user" type="text" placeholder="۳ تا ۱۸ حرف انگلیسی یا عدد" autocomplete="username" minlength="3" maxlength="18" required>
+            <label for="register-pass">رمز عبور</label><input id="register-pass" type="password" placeholder="حداقل ۶ کاراکتر" autocomplete="new-password" minlength="6" required>
+            <button class="primary" type="submit">ساخت حساب <span>←</span></button>
+            <p id="register-error" class="error"></p>
+          </form>
+        </div>
+        <div class="capacity"><div class="capacity-top"><span>ظرفیت اعضا</span><strong id="capacity-count">۰ از ۱۰</strong></div><div class="bar"><span id="capacity-bar"></span></div></div>
+      </section>
+    </section>
+
+    <section id="chat" class="chat-layout hidden">
+      <header class="topbar card">
+        <div class="brand"><span class="brand-icon">✦</span><span>PRIVATE<span class="brand-light">CHAT</span></span></div>
+        <div class="top-actions"><span class="secure-label"><span class="pulse"></span> فضای خصوصی</span><button id="logout" class="icon-button" title="خروج از حساب">↪</button></div>
+      </header>
+      <div class="chat-grid">
+        <aside class="members card">
+          <div class="side-heading"><div><p class="eyebrow">YOUR SPACE</p><h3>اتاق گفت‌وگو</h3></div><span class="room-icon">✧</span></div>
+          <div class="room-pill"><span class="live-dot"></span><span>گپ دوستانه</span><span class="room-lock">خصوصی</span></div>
+          <div class="member-heading"><span>اعضای آنلاین</span><strong id="online-count">۰</strong></div>
+          <div id="member-list" class="member-list"></div>
+          <div class="member-footer"><span class="pulse"></span> گفت‌وگوی امن و محدود</div>
+        </aside>
+        <section class="conversation card">
+          <div class="conversation-head">
+            <div><div class="title-line"><span class="live-dot"></span><h2>گپ دوستانه</h2></div><p class="muted">پیام‌ها برای همیشه نمی‌مونن؛ هر پیام بعد از یک ساعت پاک می‌شه.</p></div>
+            <div class="head-tag">TEXT ONLY</div>
+          </div>
+          <div id="messages" class="messages">
+            <div id="empty-state" class="empty-state"><div class="empty-icon">✦</div><h3>شروع یک گفت‌وگوی تازه</h3><p>اولین پیام رو تو بفرست.</p></div>
+          </div>
+          <div class="composer-wrap">
+            <div class="expiry-note"><span>◷</span> حذف خودکار هر پیام پس از ۱ ساعت</div>
+            <form id="message-form" class="composer"><input id="message-input" type="text" maxlength="1000" placeholder="پیامت رو اینجا بنویس..." autocomplete="off"><button class="send-button" type="submit" aria-label="ارسال پیام">➤</button></form>
+            <div class="composer-foot"><span>لطفاً محترمانه گفت‌وگو کنید</span><span id="char-count">۰ / ۱۰۰۰</span></div>
+          </div>
+        </section>
+      </div>
+      <footer class="app-footer">ساخته‌شده برای گفت‌وگوهای خوب <span>✦</span></footer>
+    </section>
+    <div id="toast" class="toast"></div>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
