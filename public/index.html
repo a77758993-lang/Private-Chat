@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <title>صفحه خصوصی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="screen">
+    <form id="password-form" class="panel">
+      <div class="mark">✦</div>
+      <h1>برای ورود رمز را وارد کن</h1>
+      <p>هر رمزی وارد کنی، وارد صفحه می‌شوی.</p>
+      <input id="password-input" type="password" placeholder="رمز دلخواه..." autocomplete="off" autofocus>
+      <button type="submit">ادامه</button>
+    </form>
+    <section id="message-screen" class="message-screen" hidden>
+      <div id="custom-message" class="custom-message"></div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
